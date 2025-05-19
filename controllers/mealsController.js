@@ -1,7 +1,8 @@
-
+const query = require("../db/queries/mealsQueries")
 
 async function getMeals(req , res, next) {
-  res.send('test')
+  const meals = await query.getAllMeals()
+  res.send(meals)
   return
 }
 
