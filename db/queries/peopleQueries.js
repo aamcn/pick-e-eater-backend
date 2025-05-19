@@ -5,6 +5,8 @@ async function getAllPeople() {
     return rows
 }
 
+
+
 module.exports = {
     getAllPeople
 }

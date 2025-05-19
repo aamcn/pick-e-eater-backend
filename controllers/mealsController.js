@@ -1,9 +1,19 @@
 const query = require("../db/queries/mealsQueries")
+const asyncHandler = require('express-async-handler')
 
-async function getMeals(req , res, next) {
+const getAllMeals = asyncHandler(async(req , res, next) => {
   const meals = await query.getAllMeals()
   res.send(meals)
   return
-}
+})
 
-module.exports = {getMeals}
+const getMealById= asyncHandler(async(req , res, next) => {
+  // const mealId = req.body.mealId
+  const mealId = '2'
+  const meals = await query.getMealById(mealId)
+  res.send(meals)
+  return
+})
+
+module.exports = {getAllMeals,
+  getMealById}

@@ -1,9 +1,10 @@
 const query = require("../db/queries/peopleQueries")
+const asyncHandler = require('express-async-handler')
 
-async function getPeople(req , res, next) {
+const getPeople = asyncHandler(async(req , res, next) => {
   const people = await query.getAllPeople()
   res.send(people)
   return
-}
+})
 
 module.exports = {getPeople}

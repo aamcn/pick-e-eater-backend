@@ -4,7 +4,7 @@ const mealsController = require('../controllers/mealsController')
 
 
 
-mealsRouter.get("/", mealsController.getMeals)
-
+mealsRouter.get("/", mealsController.getAllMeals)
+mealsRouter.get("/by-id", mealsController.getMealById)
 
 module.exports = mealsRouter;

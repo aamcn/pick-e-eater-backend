@@ -5,6 +5,12 @@ async function getAllMeals() {
     return rows
 }
 
+async function getMealById(mealId) {
+    const { rows } = await pool.query("SELECT * FROM meals WHERE id = ($1)", [mealId])
+    return rows;
+} 
+
 module.exports = {
-    getAllMeals
+    getAllMeals,
+    getMealById
 }
