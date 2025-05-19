@@ -5,7 +5,8 @@ const mealsRouter = require('./routes/mealsRouter')
 const port = 3000
 
 
-app.use('/meals', mealsRouter); 
+
+app.use("/meals",  mealsRouter); 
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
