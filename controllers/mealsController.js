@@ -15,5 +15,17 @@ const getMealById= asyncHandler(async(req , res, next) => {
   return
 })
 
-module.exports = {getAllMeals,
-  getMealById}
+const getMealsByType = asyncHandler(async(req , res, next) => {
+  // const mealId = req.body.mealType
+  const mealType = 'Fast Food'
+  const meals = await query.getMealsByType(mealType)
+  res.send(meals)
+  return
+})
+
+
+module.exports = {
+  getAllMeals,
+  getMealById,
+  getMealsByType
+}

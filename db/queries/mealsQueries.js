@@ -10,7 +10,13 @@ async function getMealById(mealId) {
     return rows;
 } 
 
+async function getMealsByType(mealType) {
+    const { rows } = await pool.query("SELECT * FROM meals WHERE type = ($1)", [mealType])
+    return rows;
+}
+
 module.exports = {
     getAllMeals,
-    getMealById
+    getMealById,
+    getMealsByType
 }
