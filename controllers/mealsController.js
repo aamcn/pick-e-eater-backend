@@ -31,10 +31,18 @@ const getMealsBySubType = asyncHandler(async(req , res, next) => {
   return
 })
 
+const getMealsByDifficulty = asyncHandler(async(req , res, next) => {
+  // const mealdifficulty = req.body.mealdifficulty
+  const mealDifficulty = 'Moderate'
+  const meals = await query.getMealsByDifficulty(mealDifficulty)
+  res.send(meals)
+  return
+})
 
 module.exports = {
   getAllMeals,
   getMealById,
   getMealsByType,
-  getMealsBySubType
+  getMealsBySubType,
+  getMealsByDifficulty
 }
