@@ -15,4 +15,15 @@ const getPersonByName = asyncHandler(async(req , res, next) => {
   return
 })
 
-module.exports = {getPeople, getPersonByName} 
+const addMealToLikes = asyncHandler(async(req , res, next) => {
+  // const name = req.body.name
+  const personId = '1'
+  const mealId = '4'
+  await query.addMealToLikes(personId, mealId)
+  res.send('Done')
+  return
+})
+
+
+
+module.exports = {getPeople, getPersonByName, addMealToLikes} 
