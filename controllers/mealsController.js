@@ -39,10 +39,25 @@ const getMealsByDifficulty = asyncHandler(async(req , res, next) => {
   return
 })
 
+const addNewMeal = asyncHandler(async(req , res, next) => {
+  // const name = req.body.name
+  // const type = req.body.type
+  // const subType= req.body.subType
+  // const difficulty = req.body.difficulty
+  const name = 'Souffle'
+  const type = 'Fancy'
+  const subType= 'Restaurant'
+  const difficulty = 'Hard'
+  await query.addNewMeal(name, type, subType, difficulty)
+  res.send('Added')
+  return
+})
+
 module.exports = {
   getAllMeals,
   getMealById,
   getMealsByType,
   getMealsBySubType,
-  getMealsByDifficulty
+  getMealsByDifficulty,
+  addNewMeal
 }

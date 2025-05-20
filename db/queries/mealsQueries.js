@@ -25,10 +25,15 @@ async function getMealsByDifficulty(mealDifficulty) {
     return rows;
 }
 
+async function addNewMeal(name, type, subType, difficulty) {
+    await pool.query("INSERT INTO meals (name, type, sub_type, difficulty) VALUES ($1, $2, $3, $4)", [name, type, subType, difficulty])
+}
+
 module.exports = {
     getAllMeals,
     getMealById,
     getMealsByType,
     getMealsBySubType,
-    getMealsByDifficulty
+    getMealsByDifficulty,
+    addNewMeal
 }
