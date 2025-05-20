@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
+const bodyParser = require('body-parser')
 const mealsRouter = require('./routes/mealsRouter')
 const peopleRouter = require('./routes/peopleRouter')
 const port = 3000
 
-
+app.use(bodyParser.urlencoded())
+app.use(bodyParser.json())
 app.use("/people",  peopleRouter); 
 app.use("/meals",  mealsRouter); 
 
