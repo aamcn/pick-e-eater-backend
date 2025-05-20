@@ -16,9 +16,17 @@ const getMealById= asyncHandler(async(req , res, next) => {
 })
 
 const getMealsByType = asyncHandler(async(req , res, next) => {
-  // const mealId = req.body.mealType
+  // const mealType = req.body.mealType
   const mealType = 'Fast Food'
   const meals = await query.getMealsByType(mealType)
+  res.send(meals)
+  return
+})
+
+const getMealsBySubType = asyncHandler(async(req , res, next) => {
+  // const mealSubType = req.body.mealSubType
+  const mealSubType = 'Italian'
+  const meals = await query.getMealsBySubType(mealSubType)
   res.send(meals)
   return
 })
@@ -27,5 +35,6 @@ const getMealsByType = asyncHandler(async(req , res, next) => {
 module.exports = {
   getAllMeals,
   getMealById,
-  getMealsByType
+  getMealsByType,
+  getMealsBySubType
 }
