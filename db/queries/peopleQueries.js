@@ -14,10 +14,14 @@ async function addMealToLikes(personId, mealId) {
     await pool.query("UPDATE people SET likes = ARRAY_APPEND(likes, ($1)) WHERE id = ($2)", [mealId, personId])
 }
 
+async function addMealToDislikes(personId, mealId) {
+    await pool.query("UPDATE people SET dislikes = ARRAY_APPEND(dislikes, ($1)) WHERE id = ($2)", [mealId, personId])
+}
 
 
 module.exports = {
     getAllPeople,
     getPersonByName,
-    addMealToLikes
+    addMealToLikes,
+    addMealToDislikes
 }

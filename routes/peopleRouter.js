@@ -8,4 +8,6 @@ peopleRouter.get("/", peopleController.getPeople)
 peopleRouter.get("/by-name", peopleController.getPersonByName)
 
 peopleRouter.post("/add-meal-to-likes", peopleController.addMealToLikes)
+peopleRouter.post("/add-meal-to-dislikes", peopleController.addMealToDislikes)
+
 module.exports = peopleRouter;
