@@ -1,13 +1,11 @@
 const { Router } = require("express");
 const peopleRouter = Router();
-const peopleController = require('../controllers/peopleController')
+const peopleController = require("../controllers/peopleController");
 
+peopleRouter.get("/", peopleController.getPeople);
+peopleRouter.get("/by-name", peopleController.getPersonByName);
 
-
-peopleRouter.get("/", peopleController.getPeople)
-peopleRouter.get("/by-name", peopleController.getPersonByName)
-
-peopleRouter.post("/add-meal-to-likes", peopleController.addMealToLikes)
-peopleRouter.post("/add-meal-to-dislikes", peopleController.addMealToDislikes)
+peopleRouter.post("/add-meal-to-likes", peopleController.addMealToLikes);
+peopleRouter.post("/add-meal-to-dislikes", peopleController.addMealToDislikes);
 
 module.exports = peopleRouter;
