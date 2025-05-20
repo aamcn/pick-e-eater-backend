@@ -5,8 +5,12 @@ async function getAllPeople() {
     return rows
 }
 
-
+async function getPersonByName(name) {
+    const {rows} = await pool.query("SELECT * FROM people WHERE name = ($1)", [name])
+    return rows
+}
 
 module.exports = {
-    getAllPeople
+    getAllPeople,
+    getPersonByName
 }

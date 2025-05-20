@@ -7,4 +7,12 @@ const getPeople = asyncHandler(async(req , res, next) => {
   return
 })
 
-module.exports = {getPeople}
+const getPersonByName = asyncHandler(async(req , res, next) => {
+  // const name = req.body.name
+  const name = 'Tony'
+  const people = await query.getPersonByName(name)
+  res.send(people)
+  return
+})
+
+module.exports = {getPeople, getPersonByName} 
