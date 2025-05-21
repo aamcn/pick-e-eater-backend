@@ -26,6 +26,13 @@ async function addMealToDislikes(personId, mealId) {
   );
 }
 
+async function addMealToDislikes(personId, mealId) {
+  await pool.query(
+    "UPDATE people SET dislikes = ARRAY_APPEND(dislikes, ($1)) WHERE id = ($2)",
+    [mealId, personId],
+  );
+}
+
 module.exports = {
   getAllPeople,
   getPersonByName,
