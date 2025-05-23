@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS people (
 );
 
 INSERT INTO people (name, likes, dislikes) 
-VALUES ('Tony', '{"1"}', '{"2"}');
+VALUES ('Elle', '{"1"}', '{"2"}'), ('Elliot', '{"1"}', '{"2"}'), ('Fiona', '{"1"}', '{"2"}'), ('Liam', '{"1"}', '{"2"}'), ('Natasha', '{"1"}', '{"2"}'), ('Aaron', '{"1"}', '{"2"}');
 
 CREATE TABLE IF NOT EXISTS meals (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
