@@ -35,11 +35,13 @@ const getMealsByDifficulty = asyncHandler(async (req, res, next) => {
   return;
 });
 
+
 const addNewMeal = asyncHandler(async (req, res, next) => {
-  const name = req.body.name
-  const type = req.body.type
-  const subType= req.body.subType
-  const difficulty = req.body.difficulty
+  const name = req.body.formData.name
+  const type = req.body.formData.type
+  const subType= req.body.formData.subType
+  const difficulty = req.body.formData.difficulty
+  console.log(name)
   await query.addNewMeal(name, type, subType, difficulty);
   res.send("Added");
   return;
