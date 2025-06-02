@@ -8,7 +8,7 @@ CREATE DATABASE pick_e_eater;
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: `${process.env.DBSTRING}`,
+    connectionString: process.env.DATABSE_URL,
   });
   await client.connect();
   await client.query(SQL);
