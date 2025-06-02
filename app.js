@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require("body-parser");
 const mealsRouter = require("./routes/mealsRouter");
 const dinerRouter = require("./routes/dinerRouter");
-const port = 3000;
+const PORT = 3000;
 
 app.use(cors())
 app.use(bodyParser.urlencoded());
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Pick-E-Eater listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Pick-E-Eater listening on port ${{PORT}}`);
 });
  
