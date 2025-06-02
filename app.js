@@ -19,6 +19,6 @@ app.get("/", (req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log(`Pick-E-Eater listening on port ${{PORT}}`);
+  console.log(`Pick-E-Eater listening on port ${PORT}`);
 });
  
