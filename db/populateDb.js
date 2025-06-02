@@ -4,14 +4,14 @@ require("dotenv").config();
 const { Client } = require("pg");
 
 const SQL = `
-CREATE TABLE IF NOT EXISTS people (
+CREATE TABLE IF NOT EXISTS diner (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   name VARCHAR ( 255 ),
   likes INTEGER[],
   dislikes INTEGER[]
 );
 
-INSERT INTO people (name, likes, dislikes) 
+INSERT INTO diner (name, likes, dislikes) 
 VALUES ('Elle', '{"1"}', '{"6"}'), ('Elliot', '{"1"}', '{"5"}'), ('Fiona', '{"1"}', '{"5"}'), ('Liam', '{"5"}', '{"6"}'), ('Natasha', '{"1"}', '{"4"}'), ('Aaron', '{"1"}', '{"5","3"}');
 
 CREATE TABLE IF NOT EXISTS meals (
