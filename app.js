@@ -8,8 +8,9 @@ const dinerRouter = require("./routes/dinerRouter");
 const PORT = 3000;
 
 app.use(cors())
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 app.use("/diners", dinerRouter);
 app.use("/meals", mealsRouter);
 
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Pick-E-Eater listening on port ${PORT}`);
 });
  
