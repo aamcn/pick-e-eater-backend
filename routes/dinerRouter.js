@@ -7,5 +7,5 @@ dinerRouter.get("/by-name", dinerController.getDinerByName);
 
 dinerRouter.post("/add-meal-to-likes", dinerController.addMealToLikes);
 dinerRouter.post("/add-meal-to-dislikes", dinerController.addMealToDislikes);
-
+dinerRouter.post("/add-meals-to-dislikes", dinerController.addMealsToDislikes);
 module.exports = dinerRouter;

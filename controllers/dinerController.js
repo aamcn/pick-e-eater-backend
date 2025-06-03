@@ -30,9 +30,18 @@ const addMealToDislikes = asyncHandler(async (req, res, next) => {
   return;
 });
 
+const addMealsToDislikes = asyncHandler(async (req, res, next) => {
+  const dinerId = req.body.dinerId;
+  const mealIdArray = req.body.mealIdArray;
+  await query.addMealToDislikes(dinerId, mealIdArray);
+  res.send("Done");
+  return;
+});
+
 module.exports = {
   getDiners,
   getDinerByName,
   addMealToLikes,
   addMealToDislikes,
+  addMealsToDislikes
 };

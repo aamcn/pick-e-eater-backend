@@ -26,10 +26,10 @@ async function addMealToDislikes(dinerId, mealId) {
   );
 }
 
-async function addMealToDislikes(dinerId, mealId) {
+async function addMealsToDislikes(dinerId, mealIdArray) {
   await pool.query(
-    "UPDATE diner SET dislikes = ARRAY_APPEND(dislikes, ($1)) WHERE id = ($2)",
-    [mealId, dinerId],
+    "UPDATE diner SET dislikes = ($1) WHERE id = ($2)",
+    [mealIdArray, dinerId],
   );
 }
 
@@ -38,4 +38,5 @@ module.exports = {
   getDinerByName,
   addMealToLikes,
   addMealToDislikes,
+  addMealsToDislikes
 };
