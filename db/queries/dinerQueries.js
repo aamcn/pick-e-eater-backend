@@ -28,8 +28,7 @@ async function addMealToDislikes(dinerId, mealId) {
 
 async function addMealsToDislikes(dinerId, mealIdArray) {
   await pool.query(
-    `UPDATE diner SET dislikes = ARRAY[${mealIdArray}] WHERE id = ${dinerId}`,
-    [mealIdArray, dinerId],
+    `UPDATE diner SET dislikes = '{${mealIdArray}}' WHERE id = ${dinerId}`
   );
 }
 

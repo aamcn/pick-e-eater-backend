@@ -31,9 +31,11 @@ const addMealToDislikes = asyncHandler(async (req, res, next) => {
 });
 
 const addMealsToDislikes = asyncHandler(async (req, res, next) => {
-  const dinerId = req.body.dinerId;
-  const mealIdArray = req.body.mealIdArray;
-  await query.addMealToDislikes(dinerId, mealIdArray);
+  
+  const dinerId = req.body.formData.dinerId;
+  const mealIdArray = req.body.formData.mealIdArray;
+  console.log(mealIdArray)
+  await query.addMealsToDislikes(dinerId, mealIdArray);
   res.send("Done");
   return;
 });

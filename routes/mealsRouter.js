@@ -9,5 +9,5 @@ mealsRouter.get("/by-subtype", mealsController.getMealsBySubType);
 mealsRouter.get("/by-difficulty", mealsController.getMealsByDifficulty);
 
 mealsRouter.post("/add-new-meal", mealsController.addNewMeal);
-
+ 
 module.exports = mealsRouter;
