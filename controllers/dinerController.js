@@ -2,9 +2,12 @@ const query = require("../db/queries/dinerQueries");
 const asyncHandler = require("express-async-handler");
 
 const getDiners = asyncHandler(async (req, res, next) => {
-  const diner = await query.getAllDiners();
-  res.send(diner);
-  return;
+  try {
+    const diner = await query.getAllDiners();
+    res.send(diner);
+  } catch (error) {
+    return next(error);
+  }
 });
 
 const getDinerByName = asyncHandler(async (req, res, next) => {
@@ -31,10 +34,9 @@ const addMealToDislikes = asyncHandler(async (req, res, next) => {
 });
 
 const addMealsToDislikes = asyncHandler(async (req, res, next) => {
-  
   const dinerId = req.body.formData.dinerId;
   const mealIdArray = req.body.formData.mealIdArray;
-  console.log(mealIdArray)
+  console.log(mealIdArray);
   await query.addMealsToDislikes(dinerId, mealIdArray);
   res.send("Done");
   return;
@@ -45,5 +47,5 @@ module.exports = {
   getDinerByName,
   addMealToLikes,
   addMealToDislikes,
-  addMealsToDislikes
+  addMealsToDislikes,
 };
