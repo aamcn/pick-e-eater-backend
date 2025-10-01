@@ -1,24 +1,24 @@
-# Pick-e-Eater backend 🎮
+# Pick-e-Eater backend 
 
 The backend to the 'Pick-e-Eater' app.
 
 # Features
 
-GET meal data:
-All meals, meal by mealId, Meal by type, subType or difficulty.
-POST meal data:
-Add new meal.
+    GET meal data:
+        All meals, meal by mealId, Meal by type, subType or difficulty.
+    POST meal data:
+        Add new meal.
 
-GET Diner data:
-All Diners, Diner by name.
-POST diner data:
-Add meal to disliked meals.
+    GET Diner data:
+        All Diners, Diner by name.
+    POST diner data:
+        Add meal to disliked meals.
 
 # Prerequisites
 
 Before running this project, make sure you have:
-Node.js (v14 or higher)
-postgres
+    Node.js (v14 or higher).
+    postgres.
 
 # Installation
 
@@ -214,29 +214,27 @@ npm or yarn package manager
 
 # Development
 
-Code Quality Tools
-ESLint: Code linting and style enforcement
-Prettier: Code formatting
-
-Running with Development Tools
+    Code Quality Tools.
+    ESLint: Code linting and style enforcement.
+    Prettier: Code formatting.
 
 # Run ESLint
 
-npx eslint .
+    npx eslint .
 
 # Format code with Prettier
 
-npx prettier --write .
+    npx prettier --write .
 
 # Frontend integration
 
-This backend is designed to work with the pick-e-eater-frontend application. The frontend makes requests to these endpoints to:
+    This backend is designed to work with the pick-e-eater-frontend application. The frontend makes requests to these endpoints to:
 
-Get data from database tables.
-Post data to database tables.
+    Get data from database tables.
+    Post data to database tables.
 
 # Author
 
-Aaron McNulty
-Link: https://github.com/aamcn/pick-e-eater-backend
-GitHub: @aamcn
+    Aaron McNulty,
+    Link: https://github.com/aamcn/pick-e-eater-backend
+    GitHub: @aamcn.
