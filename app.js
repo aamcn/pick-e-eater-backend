@@ -15,7 +15,7 @@ app.use("/diners", dinerRouter);
 app.use("/meals", mealsRouter);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Pick-E-Eater Backend is running!");
 });  
 
 

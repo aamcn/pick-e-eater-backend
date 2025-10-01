@@ -62,7 +62,8 @@ const addMealToDislikes = asyncHandler(async (req, res, next) => {
   }
 });
 
-// Add a single or multiple meals to a diner's disliked meals.
+
+// Add multiple meals to a diner's disliked meals.
 const addMealsToDislikes = asyncHandler(async (req, res, next) => {
   const dinerId = req.body.formData.dinerId;
   const mealIdArray = req.body.formData.mealIdArray;
