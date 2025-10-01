@@ -88,14 +88,15 @@ const getMealsByDifficulty = asyncHandler(async (req, res, next) => {
 
 // Add a new meal.
 const addNewMeal = asyncHandler(async (req, res, next) => {
-  const name = req.body.formData.name;
-  const type = req.body.formData.type;
-  const subType = req.body.formData.subType;
-  const difficulty = req.body.formData.difficulty;
-
+  const formData = req.body.formData;
   try {
     // Add the new meal to the database.
-    await query.addNewMeal(name, type, subType, difficulty);
+    await query.addNewMeal(
+      formData.name,
+      formData.type,
+      formData.subType,
+      formData.difficulty
+    );
 
     // Return success message.
     res.send("Added");
